@@ -6,7 +6,7 @@
 #    By: laprieur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 13:59:33 by laprieur          #+#    #+#              #
-#    Updated: 2023/02/08 13:06:12 by laprieur         ###   ########.fr        #
+#    Updated: 2023/02/09 15:45:25 by laprieur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,11 @@ LIBFT			:=	libft/libft.a
 
 MINILIBX		:=	minilibx/libmlx.a
 
-MANDATORY		:=	mandatory/fractol.c	\
+MANDATORY		:=	mandatory/error.c	\
+					mandatory/fractol.c	\
 					mandatory/main.c	\
 					mandatory/maths.c	\
+					mandatory/mlx.c		\
 					mandatory/image.c	\
 					mandatory/sets.c	\
 

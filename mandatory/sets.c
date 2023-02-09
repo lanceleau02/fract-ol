@@ -6,16 +6,37 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 09:37:26 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/08 11:46:56 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:47:31 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-/*void	julia(t_complex z, t_complex c)
+void	julia(t_data *data, double c_real, double c_imaginary)
 {
-	
-}*/
+	int			x;
+	int			y;
+	t_complex	z;
+	t_complex	c;
+	int			iterations;
+
+	x = 0;
+	while (x < WIN_W)
+	{
+		y = 0;
+		while (y < WIN_H)
+		{
+			c.r = c_real;
+			c.i = c_imaginary;
+			z = convert_coordinates(x, y);
+			iterations = 0;
+			iterations = define_iterations(data, z, c);
+			color(data, x, y, iterations);
+			y++;
+		}
+		x++;
+	}
+}
 
 void	mandelbrot(t_data *data)
 {

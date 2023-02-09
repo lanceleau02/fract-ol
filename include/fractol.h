@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:27:54 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/08 14:33:49 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:37:05 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@
 # define WIN_W 970
 # define WIN_H 970
 
-typedef struct	s_complex
+typedef struct s_complex
 {
 	double	r;
 	double	i;
 }	t_complex;
 
-typedef struct	s_data
+typedef struct s_data
 {
+	void	*mlx;
+	void	*mlx_win;
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -40,6 +42,10 @@ typedef struct	s_data
 
 void		fractol(int argc, char **argv, t_data *data);
 void		mandelbrot(t_data *data);
+void		julia(t_data *data, double c_real, double c_imaginary);
+void		create_window(t_data *data);
+void		create_image(t_data *data);
+void		mlx(t_data *data);
 void		color(t_data *data, int x, int y, int iterations);
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int			define_iterations(t_data *data, t_complex z, t_complex c);

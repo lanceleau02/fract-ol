@@ -6,7 +6,7 @@
 #    By: laprieur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 13:59:33 by laprieur          #+#    #+#              #
-#    Updated: 2023/02/07 13:45:45 by laprieur         ###   ########.fr        #
+#    Updated: 2023/02/09 14:33:25 by laprieur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ BONUS				:=	bonus/ft_lstadd_back_bonus.c		\
 						bonus/ft_lstnew_bonus.c				\
 						bonus/ft_lstsize_bonus.c			\
 
-ADD_ON				:=	add_on/ft_atol.c					\
+ADD_ON				:=	add_on/ft_atod.c					\
+						add_on/ft_atol.c					\
 						add_on/ft_sort_int_tab.c			\
 
 FT_PRINTF			:=	ft_printf/ft_printf.c				\
@@ -109,7 +110,6 @@ $(NAME): $(MANDATORY_OBJS) $(BONUS_OBJS) $(ADD_ON_OBJS) $(FT_PRINTF_OBJS) $(GET_
 .build/%.o: %.c
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $(CPPFLAGS) $< -o $@
-	$(info CREATED $@)
 
 -include $(DEPS)
 
