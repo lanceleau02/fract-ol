@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isfloat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:16:29 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/10 15:20:57 by laprieur         ###   ########.fr       */
+/*   Created: 2023/02/10 15:21:12 by laprieur          #+#    #+#             */
+/*   Updated: 2023/02/10 15:40:50 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
-
-int	main(int argc, char **argv)
+int	ft_isfloat(const char *nptr)
 {
-	t_data	*data;
+	int	i;
+	int	size;
 
-	if (argc < 2)
+	i = 0;
+	size = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+		i++;
+	if (ft_isdigit(nb[i]) == 1)
 	{
-		error(NULL, argv);
-		return (1);
+		size++;
+		i++;
 	}
-	data = malloc(sizeof(t_data));
-	data->max_iterations = MAX_ITERATIONS;
-	fractol(argc, argv, data);
+	if (nb[i] == '.')
+	{
+		size++;
+		i++;
+	}
+	while (ft_isdigit(nb[i]) == 1 && size < 309)
+	{
+		size++;
+		i++;
+	}
 }

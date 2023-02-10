@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:27:54 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/09 16:37:05 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/10 10:44:03 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void		color(t_data *data, int x, int y, int iterations);
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int			define_iterations(t_data *data, t_complex z, t_complex c);
 t_complex	convert_coordinates(int x, int y);
-int			error(char *set);
+int			error(char *set, char **argv);
 
 #endif
