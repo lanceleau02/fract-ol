@@ -6,7 +6,7 @@
 #    By: laprieur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 13:59:33 by laprieur          #+#    #+#              #
-#    Updated: 2023/02/09 15:45:25 by laprieur         ###   ########.fr        #
+#    Updated: 2023/02/14 16:54:37 by laprieur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ LIBFT			:=	libft/libft.a
 MINILIBX		:=	minilibx/libmlx.a
 
 MANDATORY		:=	mandatory/error.c	\
+					mandatory/events.c	\
 					mandatory/fractol.c	\
 					mandatory/main.c	\
 					mandatory/maths.c	\
@@ -35,7 +36,7 @@ BONUS_OBJS		:=	$(BONUS:%.c=.build/%.o)
 DEPS			:=	$(MANDATORY_OBJS:%.o=%.d) $(BONUS_OBJS:%.o=%.d)
 
 CC				:=	clang
-CFLAGS			:=	-Wall -Wextra -Werror -g
+CFLAGS			:=	-Wall -Wextra -Werror -g -Ofast
 CPPFLAGS		:=	-MP -MMD -Iinclude -Iminilibx -Ilibft/include
 LDFLAGS			:=	-Llibft -lft -Lminilibx -lmlx -lXext -lX11 -lm -lz
 

@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 10:45:28 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/08 12:59:19 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:51:54 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	define_iterations(t_data *data, t_complex z, t_complex c)
 	return (iterations);
 }
 
-t_complex	convert_coordinates(int x, int y)
+t_complex	convert_coordinates(int x, int y, t_data *data)
 {
 	t_complex	res;
 
-	res.r = ((4 * (double)x) - (2 * WIN_W)) / WIN_W;
-	res.i = ((4 * (double)y) - (2 * WIN_H)) / WIN_H;
+	res.r = (((4 * (double)x - (2 * WIN_W)) / WIN_W) / data->zoom) + data->move_x;
+	res.i = (((4 * (double)y - (2 * WIN_H)) / WIN_H) / data->zoom) + data->move_y;
 	return (res);
 }

@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isfloat.c                                       :+:      :+:    :+:   */
+/*   ft_isdouble.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 15:21:12 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/10 15:40:50 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:02:00 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isfloat(const char *nptr)
+#include "libft.h"
+
+int	ft_isdouble(const char *nptr)
 {
 	int	i;
 	int	size;
+	int	decimal_points;
 
 	i = 0;
-	size = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (nptr[i] == '-' || nptr[i] == '+')
 		i++;
-	if (ft_isdigit(nb[i]) == 1)
+	size = 0;
+	decimal_points = 0;
+	while (ft_isdigit(nptr[i]) == 1 || nptr[i] == '.')
 	{
+		if (nptr[i] == '.')
+			decimal_points++;
 		size++;
 		i++;
 	}
-	if (nb[i] == '.')
-	{
-		size++;
-		i++;
-	}
-	while (ft_isdigit(nb[i]) == 1 && size < 309)
-	{
-		size++;
-		i++;
-	}
+	if (size > 311 || decimal_points != 1)
+		return (1);
+	return (0);
 }

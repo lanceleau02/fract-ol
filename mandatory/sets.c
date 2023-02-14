@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 09:37:26 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/09 16:47:31 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/14 14:45:07 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	julia(t_data *data, double c_real, double c_imaginary)
 		{
 			c.r = c_real;
 			c.i = c_imaginary;
-			z = convert_coordinates(x, y);
+			z = convert_coordinates(x, y, data);
 			iterations = 0;
 			iterations = define_iterations(data, z, c);
 			color(data, x, y, iterations);
@@ -54,7 +54,7 @@ void	mandelbrot(t_data *data)
 		{
 			z.r = 0.0;
 			z.i = 0.0;
-			c = convert_coordinates(x, y);
+			c = convert_coordinates(x, y, data);
 			iterations = 0;
 			iterations = define_iterations(data, z, c);
 			color(data, x, y, iterations);

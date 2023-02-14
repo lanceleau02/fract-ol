@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 09:31:36 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/09 14:00:05 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:06:37 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ char		*get_next_line(int fd);
 
 double		ft_atod(const char *nptr);
 long		ft_atol(const char *nptr);
+int			ft_isdouble(const char *nptr);
 void		ft_sort_int_tab(int *tab, int size);
 
 #endif

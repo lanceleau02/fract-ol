@@ -6,7 +6,7 @@
 #    By: laprieur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 13:59:33 by laprieur          #+#    #+#              #
-#    Updated: 2023/02/09 14:33:25 by laprieur         ###   ########.fr        #
+#    Updated: 2023/02/13 12:02:56 by laprieur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ BONUS				:=	bonus/ft_lstadd_back_bonus.c		\
 
 ADD_ON				:=	add_on/ft_atod.c					\
 						add_on/ft_atol.c					\
+						add_on/ft_isdouble.c				\
 						add_on/ft_sort_int_tab.c			\
 
 FT_PRINTF			:=	ft_printf/ft_printf.c				\
