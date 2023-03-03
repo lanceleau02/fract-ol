@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 09:31:36 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/13 11:06:37 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:38:03 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 
-/* *************************** */	
+/* *************************** */
 /*          MANDATORY          */
 /* *************************** */
 
@@ -95,5 +95,6 @@ double		ft_atod(const char *nptr);
 long		ft_atol(const char *nptr);
 int			ft_isdouble(const char *nptr);
 void		ft_sort_int_tab(int *tab, int size);
+int			ft_strcmp(char *s1, char *s2);
 
 #endif

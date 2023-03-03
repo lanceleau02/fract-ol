@@ -6,11 +6,12 @@
 #    By: laprieur <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 13:59:33 by laprieur          #+#    #+#              #
-#    Updated: 2023/02/14 16:54:37 by laprieur         ###   ########.fr        #
+#    Updated: 2023/02/28 15:19:21 by laprieur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MANDATORY_NAME	:=	fractol
+BONUS_NAME		:=	fractol_bonus
 
 #-------------------------------#
 #          INGREDIENTS          #
@@ -20,23 +21,33 @@ LIBFT			:=	libft/libft.a
 
 MINILIBX		:=	minilibx/libmlx.a
 
-MANDATORY		:=	mandatory/error.c	\
-					mandatory/events.c	\
-					mandatory/fractol.c	\
-					mandatory/main.c	\
-					mandatory/maths.c	\
-					mandatory/mlx.c		\
-					mandatory/image.c	\
-					mandatory/sets.c	\
+MANDATORY		:=	mandatory/error.c			\
+					mandatory/events.c			\
+					mandatory/fractol.c			\
+					mandatory/hooks.c			\
+					mandatory/image.c			\
+					mandatory/main.c			\
+					mandatory/maths.c			\
+					mandatory/mlx.c				\
+					mandatory/sets.c			\
 
-BONUS			:=	\
+BONUS			:=	bonus/error_bonus.c			\
+					bonus/events_bonus.c		\
+					bonus/events_plus_bonus.c	\
+					bonus/fractol_bonus.c		\
+					bonus/hooks_bonus.c			\
+					bonus/image_bonus.c			\
+					bonus/main_bonus.c			\
+					bonus/maths_bonus.c			\
+					bonus/mlx_bonus.c			\
+					bonus/sets_bonus.c			\
 
 MANDATORY_OBJS	:=	$(MANDATORY:%.c=.build/%.o)
 BONUS_OBJS		:=	$(BONUS:%.c=.build/%.o)
 DEPS			:=	$(MANDATORY_OBJS:%.o=%.d) $(BONUS_OBJS:%.o=%.d)
 
 CC				:=	clang
-CFLAGS			:=	-Wall -Wextra -Werror -g -Ofast
+CFLAGS			:=	-Wall -Wextra -Werror -Ofast
 CPPFLAGS		:=	-MP -MMD -Iinclude -Iminilibx -Ilibft/include
 LDFLAGS			:=	-Llibft -lft -Lminilibx -lmlx -lXext -lX11 -lm -lz
 
@@ -58,8 +69,8 @@ $(MANDATORY_NAME): $(LIBFT) $(MINILIBX) $(MANDATORY_OBJS)
 	$(CC) $(CFLAGS) $(MANDATORY_OBJS) $(LDFLAGS) -o $(MANDATORY_NAME)
 	$(info CREATED $(MANDATORY_NAME))
 
-$(BONUS_NAME): $(LIBFT) $(BONUS_OBJS) $(MANDATORY_OBJS)
-	$(CC) $(CFLAGS) $(BONUS_OBJS) $(MANDATORY_OBJS) $(LDFLAGS) -o $(BONUS_NAME)
+$(BONUS_NAME): $(LIBFT) $(MINILIBX) $(BONUS_OBJS)
+	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LDFLAGS) -o $(BONUS_NAME)
 	$(info CREATED $(BONUS_NAME))
 
 $(LIBFT):

@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 09:37:26 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/14 14:45:07 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/03/02 13:43:47 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ void	julia(t_data *data, double c_real, double c_imaginary)
 			c.r = c_real;
 			c.i = c_imaginary;
 			z = convert_coordinates(x, y, data);
-			iterations = 0;
 			iterations = define_iterations(data, z, c);
 			color(data, x, y, iterations);
 			y++;
 		}
 		x++;
 	}
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
 }
 
 void	mandelbrot(t_data *data)
@@ -52,14 +52,14 @@ void	mandelbrot(t_data *data)
 		y = 0;
 		while (y < WIN_H)
 		{
-			z.r = 0.0;
-			z.i = 0.0;
+			z.r = 0.00;
+			z.i = 0.00;
 			c = convert_coordinates(x, y, data);
-			iterations = 0;
 			iterations = define_iterations(data, z, c);
 			color(data, x, y, iterations);
 			y++;
 		}
 		x++;
 	}
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:09:08 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/10 14:06:40 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:03:03 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,24 @@ static double	decimal_part(const char *nptr)
 static double	integer_part(const char *nptr)
 {
 	int		i;
-	double	minus;
+	double	nb;
+
+	i = 0;
+	nb = 0;
+	while (ft_isdigit(nptr[i]) == 1 && nptr[i] != '.')
+	{
+		nb = nb * 10 + (nptr[i] - 48);
+		i++;
+	}
+	return (nb);
+}
+
+double	ft_atod(const char *nptr)
+{
+	int		i;
+	int		minus;
+	double	integer;
+	double	decimal;
 	double	nb;
 
 	i = 0;
@@ -49,24 +66,8 @@ static double	integer_part(const char *nptr)
 			minus *= -1.0;
 		i++;
 	}
-	nb = 0;
-	while (ft_isdigit(nptr[i]) == 1 && nptr[i] != '.')
-	{
-		nb = nb * 10 + (nptr[i] - 48);
-		i++;
-	}
-	nb = nb * minus;
-	return (nb);
-}
-
-double	ft_atod(const char *nptr)
-{
-	double	integer;
-	double	decimal;
-	double	nb;
-
-	integer = integer_part(nptr);
-	decimal = decimal_part(nptr);
-	nb = integer + decimal;
+	integer = integer_part(&nptr[i]);
+	decimal = decimal_part(&nptr[i]);
+	nb = (integer + decimal) * minus;
 	return (nb);
 }

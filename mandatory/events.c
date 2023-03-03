@@ -6,7 +6,7 @@
 /*   By: laprieur <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:09:56 by laprieur          #+#    #+#             */
-/*   Updated: 2023/02/14 16:31:55 by laprieur         ###   ########.fr       */
+/*   Updated: 2023/03/02 13:44:06 by laprieur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,29 @@
 void	zoom(t_data *data)
 {
 	data->zoom *= 1.50;
-	if (ft_strncmp(data->argv[1], "Julia", 5) == 0)
-	{
+	if (data->set == 1)
 		julia(data, ft_atod(data->argv[2]), ft_atod(data->argv[3]));
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
-	}
-	else if (ft_strncmp(data->argv[1], "Mandelbrot", 10) == 0)
-	{
+	else if (data->set == 2)
 		mandelbrot(data);
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, 0, 0);
-	}
 }
 
-/*void	precision(t_data *data)
+void	dezoom(t_data *data)
 {
-	data->max_iterations *= 1.5;
-	if (ft_strncmp(data->argv[1], "Julia", 5) == 0)
-	{
+	data->zoom /= 1.50;
+	if (data->set == 1)
 		julia(data, ft_atod(data->argv[2]), ft_atod(data->argv[3]));
-		create_image(data);
-	}
-	else if (ft_strncmp(data->argv[1], "Mandelbrot", 10) == 0)
-	{
+	else if (data->set == 2)
 		mandelbrot(data);
-		create_image(data);
-	}
-}*/
+}
+
+void	precision(t_data *data, int sign)
+{
+	if (sign == 1)
+		data->max_iterations *= 1.50;
+	else if (data->max_iterations > 2)
+		data->max_iterations *= 0.75;
+	if (data->set == 1)
+		julia(data, ft_atod(data->argv[2]), ft_atod(data->argv[3]));
+	else if (data->set == 2)
+		mandelbrot(data);
+}
