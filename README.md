@@ -40,6 +40,8 @@ cd fract-ol
 make
 ```
 
+### Bonus
+
 To compile the bonus part (Burning Ship set and more features):
 
 ```bash
@@ -47,6 +49,10 @@ make bonus
 ```
 
 ## Usage
+
+### Mandatory
+
+In the mandatory part, you can just zoom in and zoom out (scroll-wheel) in the fractal.
 
 If you want to see the Mandelbrot set:
 
@@ -60,10 +66,19 @@ If you want to see the Julia set (constants must be between -2.00 and 2.00):
 ./fractol Julia <constant> <constant>
 ```
 
-If you want to see the Julia set:
+### Bonus
+
+In the bonus part, the Burning Ship set is available and there are some nice addings:
+
+- The zoom follows the mouse position.
+- You can move in the fractal (directional arrows or with the `W`, `A`, `S` and `D` keys).
+- You can change the color of the fractal (`P` key).
+- You can increase or decrease the precision of the fractal (`+` and `-` keys).
+
+If you want to see the Burning Ship set:
 
 ```bash
-./checker 3 2 1 0
+./fractol_bonus BurningShip
 ```
 
 ## License
@@ -78,7 +93,4 @@ For more details, see the [LICENSE](https://github.com/lanceleau02/ft_printf/blo
 
 ## Resources
 
-- [printfTester](https://github.com/Tripouille/printfTester)
-- [ft_printf tester](https://github.com/paulo-santana/ft_printf_tester)
-- [printf Manual](https://man7.org/linux/man-pages/man3/printf.3.html)
-- [stdarg Manual](https://man7.org/linux/man-pages/man3/va_arg.3.html)
+
