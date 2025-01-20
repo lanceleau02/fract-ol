@@ -89,7 +89,7 @@ This project is licensed under the **42 School** License.
 - **Non-commercial Use**: The code may not be used for commercial purposes or redistributed outside of the 42 School context.
 - **No Warranty**: The project is provided "as-is", without any warranty of any kind.
 
-For more details, see the [LICENSE](https://github.com/lanceleau02/ft_printf/blob/main/LICENSE) file.
+For more details, see the [LICENSE](https://github.com/lanceleau02/fract-ol/blob/main/LICENSE) file.
 
 ## Resources
 
