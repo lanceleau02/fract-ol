@@ -93,4 +93,6 @@ For more details, see the [LICENSE](https://github.com/lanceleau02/ft_printf/blo
 
 ## Resources
 
-
+- [Mandelbrot set (Wikipedia)](https://en.wikipedia.org/wiki/Mandelbrot_set)
+- [Julia set (Wikipedia)](https://en.wikipedia.org/wiki/Julia_set)
+- [Burning Ship fractal (Wikipedia)](https://en.wikipedia.org/wiki/Burning_Ship_fractal)
